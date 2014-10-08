@@ -1,0 +1,43 @@
+import java.awt.*; 						// импорт пакета awt
+import java.awt.event.ActionEvent; 		// импорт пакета awt.event.ActionEvent
+import java.awt.event.ActionListener; 	// импорт пакета awt.event.ActionListener
+import java.awt.event.ItemEvent; 		// импорт пакета awt.event.ItemEvent
+import java.awt.event.ItemListener; 	// импорт пакета event.ItemListener
+import java.text.*; 					// импорт пакета text
+
+import javax.swing.*; 					// импорт пакета swing
+
+import javafx.*;
+public class nds
+{										// открывающий символ
+	private JLabel log;					// добавление часного модуля log типа Jlabel(надпись)
+	private JLabel log11;				// добавление часного модуля log типа Jlabel(надпись)
+	private JLabel log1;				// добавление часного модуля log1 типа Jlabel(надпись)
+    private JLabel log2;				// добавление часного модуля log2 типа Jlabel(надпись)
+    private JLabel log3;				// добавление часного модуля log3 типа Jlabel(надпись)
+    private JLabel log4;				// добавление часного модуля log4 типа Jlabel(надпись)
+    private JLabel log5;				// добавление часного модуля log5 типа Jlabel(надпись)
+    private JLabel log6;				// добавление часного модуля log6 типа Jlabel(надпись)
+    private JLabel log7;				// добавление часного модуля log7 типа Jlabel(надпись)
+    private JLabel log8;				// добавление часного модуля log8 типа Jlabel(надпись)
+    private JLabel rubl1;				// добавление часного модуля rubl1 типа Jlabel(надпись)
+    private JLabel rubl2;				// добавление часного модуля rubl2 типа Jlabel(надпись)
+    private JLabel rubl3;				// добавление часного модуля rubl3 типа Jlabel(надпись)
+    private JLabel rubl4;				// добавление часного модуля rubl4 типа Jlabel(надпись)
+    private JLabel result;				// добавление часного модуля result типа Jlabel(надпись)
+    private JTextField text1;			// добавление часного модуля text1 типа JTextField(текстовое поле)
+    private JTextField text2;			// добавление часного модуля text2 типа JTextField(текстовое поле)
+    private JTextField text3;			// добавление часного модуля text3 типа JTextField(текстовое поле)
+    private JTextField text4;			// добавление часного модуля text4 типа JTextField(текстовое поле)
+    private JComboBox comboBox;			// добавление часного модуля comboBox типа JComboBox(выпадающий список)
+    private JComboBox comboBox1;		// добавление часного модуля comboBox1 типа JComboBox(выпадающий список)
+    private JComboBox comboBox2;		// добавление часного модуля comboBox2 типа JComboBox(выпадающий список)
+    private JComboBox comboBox3;		// добавление часного модуля comboBox1 типа JComboBox(выпадающий список)
+    private JComboBox comboBox4;		// добавление часного модуля comboBox1 типа JComboBox(выпадающий список)
+    private ButtonGroup bg;				// добавление часного модуля bg типа ButtonGroup(группа кнопок)
+    private ButtonGroup bg1;			// добавление часного модуля bg1 типа ButtonGroup(группа кнопок)
+    private ButtonGroup bg2;			// добавление часного модуля bg2 типа ButtonGroup(группа кнопок)
+    private ButtonGroup bg3;			// добавление часного модуля bg3 типа ButtonGroup(группа кнопок)
+    private JButton Button1;			// добавление часного модуля Button3 типа JButton(кнопка)
+    private JButton Button2;			// добавление часного модуля Button4 типа JButton(кнопка)
+    private JFrame mainFrame;			// добавление часного модуля mainFrame типа JFrame(форма)
