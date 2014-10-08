@@ -396,3 +396,221 @@ Color button = new Color(255, 229, 180);
                       comboBox.setEnabled(false);
                       text1.setEnabled(false);
                    }			// конец выполнения действий оператора try
+                   catch ( NumberFormatException error ) {				// перехват исключения оператором catch
+                       result.setText("Проверьте введённые данные"); 		// вывод текста "Проверьте введённые данные" в поле  result, через метод setText
+                       result.setForeground(Color.RED);		// установка цвета текста Jlabel result методом setForeground
+                 }			// конец выполнения действий при перехвате исключения оператором catch
+                }			// конец метода actionPerformed    
+            };				//конец работы слушателя snds
+            
+            final ActionListener bnds = new ActionListener() {		// объявление слушателя bnds (обработку события нажатия на кнопку)
+         	     @Override		// добавление аннотации Override
+         	      public void actionPerformed(ActionEvent calc1) {		// объявление метода actionPerformed
+         	          try {			// объявление оператора try (попытка выполнить действия)
+         	             double cost = Double.parseDouble(text1.getText());		// определение типа (Double) переменной(cost) методом parseDouble, присваиваение переменной cost введенного значения из text1
+         	             double nds1 = cost * 0.18;		// определение типа переменной(nds1), присваиваение nds1 значения выражения
+         	             double summas1 = cost + nds1;			// определение типа переменной(summas1), присваиваение summas1 значения выражения
+         	             double summabez1 = cost;			// определение типа переменной(summas1), присваиваение summabez1 значения выражения
+         	             NumberFormat na = NumberFormat.getInstance();		// присвоение класса NumberFormat переменной na методом getInstance
+                          na.setMaximumFractionDigits(2);   		// ограничение количества цифр после запятой до 2-ух
+         	             text2.setText(""+na.format(summas1));		// вывод значения summas1 в поле text2, через метод setText и ограничение количества цифр после запятой методом format
+         	             text3.setText(""+na.format(summabez1));		// вывод значения summabez1 в поле text2, через метод setText и ограничение количество цифр после запятой методом format
+         	             text4.setText(""+na.format(nds1)); 		// вывод значения nds1 в поле text2, через метод setText и ограничение количества цифр после запятой методом format
+         	             result.setText("");		// вывод текста "" в поле  result, используя метод setText
+                          log11.setVisible(false);
+                          log1.setVisible(false);
+                          log2.setVisible(false);
+                          log3.setVisible(false);
+                          log4.setVisible(false);
+                          log5.setVisible(false);
+                          text1.setVisible(false);
+                          comboBox.setVisible(false);
+                          comboBox1.setVisible(false);
+                          comboBox2.setVisible(false);
+                          comboBox3.setVisible(false);
+                          comboBox4.setVisible(false);
+                          Button1.setVisible(false);
+                          rubl1.setVisible(false);
+                          Button2.setVisible(true);
+                          log6.setVisible(true);
+                          log7.setVisible(true);
+                          log8.setVisible(true);
+                          text2.setVisible(true);
+                          text3.setVisible(true);
+                          text4.setVisible(true);
+                          rubl2.setVisible(true);
+                          rubl3.setVisible(true);
+                          rubl4.setVisible(true);
+         	             Button2.setEnabled(true);		//перевод кнопки Button4 в доступное состояние (для нажатия) методом setEnabled
+         	             comboBox1.setEnabled(false);		// перевод кнопки comboBox1 в не доступное состояние (для нажатия) методом setEnabled
+                          comboBox2.setEnabled(false);
+                          comboBox3.setEnabled(false);
+                          comboBox4.setEnabled(false);
+                          comboBox.setEnabled(false);
+                          text1.setEnabled(false);
+         	          }			// конец выполнения действий оператора try
+         	      catch ( NumberFormatException error ) {				// перехват исключения оператором catch
+         	             result.setText("Проверьте введённые данные");  		// вывод текста "Проверьте введённые данные" в поле  result, через метод setText
+         	             result.setForeground(Color.RED); 			// установка цвета текста Jlabel result методом setForeground
+         	       }			// конец выполнения действий при перехвате исключения оператором catch   
+         	      }			// конец метода actionPerformed    
+         	  };				//конец работы слушателя bnds	
+            	  final ActionListener combob1 = new ActionListener() {		// объявление слушателя combob (обработку события выбора из списка)
+                   public void actionPerformed(ActionEvent a2) {  		// объявление метода actionPerformed
+                       JComboBox box = (JComboBox)a2.getSource(); 		//
+                               String item = (String)box.getSelectedItem();  			// 	
+                               if(item == "Да"){ 			// проверка выполнения логического выражения оператором if
+                              	 Button1.setEnabled(true);			// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                              	 comboBox.setEnabled(false);
+                              	 comboBox.setSelectedItem("");
+                              	 Button1.addActionListener(bnds1); 			// присваиваение кнопке Button3 слушателя bnds1
+                              	 Button1.removeActionListener(bnds); 		// прекращение прослушивания кнопки Button3 слушателем bnds
+                              	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                              	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                              	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                               }			// конец выполнения действий при выполнении условия оператора if   
+                               else if(item == "Нет"){	 			// проверка выполнения логического выражения оператором else if
+                               	 Button1.setEnabled(false);		// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                               	 comboBox.setEnabled(true);
+                              	 Button1.removeActionListener(bnds); 			// присваиваение кнопке Button3 слушателя snds
+                              	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds1                            	
+                              	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                              	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                              	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                               }			// конец выполнения действий при выполнении условия оператора else if
+                               else if(item == ""){ 			// проверка выполнения логического выражения оператором else if
+                              	 Button1.setEnabled(false);		// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                              	 comboBox.setEnabled(false);
+                                  comboBox.setSelectedItem("");
+                              	 Button1.removeActionListener(bnds); 			// присваиваение кнопке Button3 слушателя snds
+                              	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds1                            	
+                              	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                              	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                              	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                               };			// конец выполнения действий при выполнении условия оператора else if                                 
+                      }			// конец метода actionPerformed    
+                  };				//конец работы слушателя combob
+               	  final ActionListener combos1 = new ActionListener() {		// объявление слушателя combob (обработку события выбора из списка)
+                       public void actionPerformed(ActionEvent a2) {  		// объявление метода actionPerformed
+                           JComboBox box = (JComboBox)a2.getSource(); 		//
+                                   String item = (String)box.getSelectedItem();  			// 	
+                                   if(item == "Да"){ 			// проверка выполнения логического выражения оператором if
+                                  	 Button1.setEnabled(true);			// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                                  	 comboBox.setEnabled(false);
+                                  	 comboBox.setSelectedItem("");
+                                  	 Button1.addActionListener(snds1); 			// присваиваение кнопке Button3 слушателя bnds1
+                                  	 Button1.removeActionListener(bnds); 		// прекращение прослушивания кнопки Button3 слушателем bnds
+                                  	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                                  	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                                  	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                                   }			// конец выполнения действий при выполнении условия оператора if   
+                                   else if(item == "Нет"){	 			// проверка выполнения логического выражения оператором else if
+                                   	 Button1.setEnabled(false);		// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                                  	 comboBox.setEnabled(true);
+                                  	 Button1.removeActionListener(bnds); 			// присваиваение кнопке Button3 слушателя snds
+                                  	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds1                            	
+                                  	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                                  	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                                  	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                                   }			// конец выполнения действий при выполнении условия оператора else if
+                                   else if(item == ""){ 			// проверка выполнения логического выражения оператором else if
+                                  	 Button1.setEnabled(false);		// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                                  	 comboBox.setEnabled(false);
+                                      comboBox.setSelectedItem("");
+                                  	 Button1.removeActionListener(bnds); 			// присваиваение кнопке Button3 слушателя snds
+                                  	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds1                            	
+                                  	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                                  	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                                  	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                                   };			// конец выполнения действий при выполнении условия оператора else if                                 
+                          }			// конец метода actionPerformed    
+                      };				//конец работы слушателя combob
+         	  final ActionListener combos = new ActionListener() {		// объявление слушателя combos (обработку события выбора из списка)
+                   public void actionPerformed(ActionEvent a) {  		// объявление метод actionPerformed
+                       JComboBox box = (JComboBox)a.getSource();  		 //
+                               String item = (String)box.getSelectedItem(); 			//
+                               if(item == "Физическое лицо"){ 			// проверка выполнения логического выражения оператором if
+                              	 Button1.setEnabled(true);		// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                              	 Button1.addActionListener(snds1); 			// присваиваение кнопке Button3 слушателя snds1
+                              	 Button1.removeActionListener(snds); 			// прекращение прослушивания кнопки Button3 слушателем snds
+                              	 Button1.removeActionListener(bnds); 			// прекращение прослушивания кнопки Button3 слушателем bnds
+                              	 Button1.removeActionListener(bnds1); 			// прекращение прослушивания кнопки Button3 слушателем bnds1
+                              	 Button1.removeActionListener(bnds2);  			// прекращение прослушивания кнопки Button3 слушателем bnds2
+                               }			// конец выполнения действий при выполнении условия оператора if   
+                               else if(item == "Индивидуальный предприниматель"){ 			// проверка выполнения логического выражения оператором else if
+                               	 Button1.setEnabled(true);		// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                              	 Button1.addActionListener(snds); 			// присваиваение кнопке Button3 слушателя snds
+                              	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                              	 Button1.removeActionListener(bnds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                              	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds1
+                              	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                               }			// конец выполнения действий при выполнении условия оператора else if   
+                               else if(item == ""){ 			// проверка выполнения логического выражения оператором else if;
+                               	 Button1.removeActionListener(snds); 			// прекращение прослушивания кнопки Button3 слушателем snds
+                             	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                               	 Button1.removeActionListener(bnds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                               	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds1
+                               	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                               	 Button1.setEnabled(false);		// перевод кнопки Button3 в не доступное состояние (для нажатия) методом setEnabled
+                               }; 			// конец выполнения действий при выполнении условия оператора else if                              
+                      }			// конец метода actionPerformed         
+                  };			//конец работы слушателя combos                  
+                  final ActionListener combob = new ActionListener() {		// объявление слушателя combob (обработку события выбора из списка)
+                      public void actionPerformed(ActionEvent a1) {  		// объявление метода actionPerformed
+                          JComboBox box = (JComboBox)a1.getSource(); 		//
+                                  String item = (String)box.getSelectedItem();  			// 	
+                                  if(item == "Физическое лицо"){ 			// проверка выполнения логического выражения оператором if
+                                 	 Button1.setEnabled(true);			// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                                 	 Button1.addActionListener(bnds1); 			// присваиваение кнопке Button3 слушателя bnds1
+                                 	 Button1.removeActionListener(bnds); 		// прекращение прослушивания кнопки Button3 слушателем bnds
+                                 	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                                 	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                                 	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                                  }			// конец выполнения действий при выполнении условия оператора if   
+                                  else if(item == "Индивидуальный предприниматель"){	 			// проверка выполнения логического выражения оператором else if
+                                 	 Button1.setEnabled(true);			// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                                 	 Button1.addActionListener(bnds); 			// присваиваение кнопке Button3 слушателя snds
+                                 	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds1                            	
+                                 	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                                 	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                                 	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                                  }			// конец выполнения действий при выполнении условия оператора else if
+                                  else if(item == ""){ 			// проверка выполнения логического выражения оператором else if
+                                 	 Button1.setEnabled(false);		// перевод кнопки Button3 в доступное состояние (для нажатия) методом setEnabled
+                                  	 Button1.removeActionListener(bnds); 			// присваиваение кнопке Button3 слушателя snds
+                                  	 Button1.removeActionListener(bnds1); 		// прекращение прослушивания кнопки Button3 слушателем bnds1                            	
+                                  	 Button1.removeActionListener(snds); 		// прекращение прослушивания кнопки Button3 слушателем snds
+                                  	 Button1.removeActionListener(snds1); 		// прекращение прослушивания кнопки Button3 слушателем snds1
+                                  	 Button1.removeActionListener(bnds2); 		// прекращение прослушивания кнопки Button3 слушателем bnds2
+                                  };			// конец выполнения действий при выполнении условия оператора else if                                 
+                         }			// конец метода actionPerformed    
+                     };				//конец работы слушателя combob        
+         	  final ActionListener combo = new ActionListener() {		// объявление слушателя combob (обработку события выбора из списка)
+                   public void actionPerformed(ActionEvent a2) {  		// объявление метода actionPerformed
+                       JComboBox box = (JComboBox)a2.getSource(); 		//
+                               String item = (String)box.getSelectedItem();  			// 	
+                               if(item == "С НДС"){ 			// проверка выполнения логического выражения оператором if
+                               comboBox2.setEnabled(true);
+                               comboBox4.addActionListener(combos1);
+                               comboBox.addActionListener(combos);
+                               comboBox4.removeActionListener(combob1);
+                               comboBox.removeActionListener(combob);
+                               }			// конец выполнения действий при выполнении условия оператора if   
+                               else if(item == "Без НДС"){	 			// проверка выполнения логического выражения оператором else if
+                               comboBox2.setEnabled(true);
+                               comboBox4.addActionListener(combob1);
+                               comboBox.addActionListener(combob);
+                               comboBox4.removeActionListener(combos1);
+                               comboBox.removeActionListener(combos);
+                               }			// конец выполнения действий при выполнении условия оператора else if
+                               else if(item == ""){ 			// проверка выполнения логического выражения оператором else if
+                               comboBox2.setEnabled(false);
+                           	  comboBox2.setSelectedItem("");
+                               comboBox4.removeActionListener(combob1);
+                               comboBox.removeActionListener(combob);
+                               comboBox4.removeActionListener(combos1);
+                               comboBox.removeActionListener(combos);
+                               comboBox2.setSelectedItem("");
+                               };			// конец выполнения действий при выполнении условия оператора else if                                 
+                      }			// конец метода actionPerformed    
+                  };	
