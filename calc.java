@@ -193,3 +193,206 @@ Color button = new Color(255, 229, 180);
                 result.setText("Введите необходимые данные");
             }														// конец метода actionPerformed    
         };															//конец работы слушателя again
+        
+        final ActionListener bnds1 = new ActionListener() {			// объявление слушателя bnds1 (обработку события нажатия на кнопку)
+            @Override												// добавление аннотации Override
+             public void actionPerformed(ActionEvent calc) {		// объявление метода actionPerformed	
+               try {												// объявление оператора try (попытка выполнить действия)
+                double cost2 = Double.parseDouble(text1.getText()); // определение типа(Double) переменной(cost2) методом parseDouble,присваиваение переменной cost2 введенного значения из text1
+                double nds2 = cost2 * 0.1;							// определение типа переменной(nds2), присваиваение nds2 значение выражения
+                double summas2 = cost2 + nds2;						// определение типа переменной(summas2), присваиваение summas2 значение выражения
+                double summabez2 = cost2; 							// определение типа переменной(summabez2), присваиваение summabez2 значение выражения
+                NumberFormat na = NumberFormat.getInstance();		// присвоение класса NumberFormat переменной na методом getInstance
+                na.setMaximumFractionDigits(2);   					// ограничение количества цифр после запятой до 2-ух
+                text2.setText(""+na.format(summas2));				// вывод значения summas2 в поле text2, используя метод setText и ограничение количества цифр после запятой методом format
+                text3.setText(""+na.format(summabez2));				// вывод значения summabez2 в поле text3, используя метод setText и ограничение количества цифр после запятой методом format
+                text4.setText(""+na.format(nds2));					// вывод значения nds2 в поле text4, используя метод setText и ограничение количества цифр после запятой методом format
+                result.setText("");									// вывод текста "" в поле  result, используя метод setText
+                log11.setVisible(false);
+                log1.setVisible(false);
+                log2.setVisible(false);
+                log3.setVisible(false);
+                log4.setVisible(false);
+                log5.setVisible(false);
+                text1.setVisible(false);
+                comboBox.setVisible(false);
+                comboBox1.setVisible(false);
+                comboBox2.setVisible(false);
+                comboBox3.setVisible(false);
+                comboBox4.setVisible(false);
+                Button1.setVisible(false);
+                rubl1.setVisible(false);
+                Button2.setVisible(true);
+                log6.setVisible(true);
+                log7.setVisible(true);
+                log8.setVisible(true);
+                text2.setVisible(true);
+                text3.setVisible(true);
+                text4.setVisible(true);
+                rubl2.setVisible(true);
+                rubl3.setVisible(true);
+                rubl4.setVisible(true);
+                Button2.setEnabled(true);							// перевод кнопки Button4 в доступное состояние (для нажатия) методом setEnabled
+                comboBox1.setEnabled(false);						// перевод кнопки comboBox1 в не доступное состояние (для нажатия) методом setEnabled
+                comboBox2.setEnabled(false);
+                comboBox3.setEnabled(false);
+                comboBox4.setEnabled(false);
+                comboBox.setEnabled(false);
+                text1.setEnabled(false);
+                 }													// конец выполнения действий оператора try
+             catch ( NumberFormatException error ) {				// перехват исключения оператором catch
+                    result.setText("Проверьте введённые данные"); 	// вывод текста "Проверьте введённые данные" в поле  result, через метод setText
+                    result.setForeground(Color.RED);				// установка цвета текста Jlabel result
+              }														// конец выполнения действий при перехвате исключения оператором catch
+             }														// конец метода actionPerformed    
+         };															//конец работы слушателя bnds1
+            final ActionListener bnds2 = new ActionListener() {		// объявление слушателя bnds2 (обработку события нажатия на кнопку)
+            @Override												// добавление аннотации Override
+             public void actionPerformed(ActionEvent calc) {		// объявление метода actionPerformed	
+                 try {												// объявление оператора try (попытка выполнить действия)
+                    double cost3 = Double.parseDouble(text1.getText());		// определение типа(Double) переменной(cost3) методом parseDouble,присваиваение переменной cost3 введенного значения из text1
+                    double nds3 = 0;										// определение типа переменной(nds3), присваиваение nds3 значение выражения
+                    double summas3 = cost3 + nds3;							// определение типа переменной(summas3), присваиваение summas3 значение выражения
+                    double summabez3 = cost3; 								// определение типа переменной(summabez3), присваиваение summabez3 значение выражения
+                    NumberFormat na = NumberFormat.getInstance();			// присвоение класса NumberFormat переменной na методом getInstance
+                    na.setMaximumFractionDigits(2);  						// ограничение количества цифр после запятой до 2-ух
+                    text2.setText(""+na.format(summas3));					// вывод значения summas3 в поле text2, используя метод setText и ограничение количества цифр после запятой методом format
+                    text3.setText(""+na.format(summabez3));					// вывод значения summabez3 в поле text3, используя метод setText и ограничение количества цифр после запятой методом format
+                    text4.setText(""+na.format(nds3));						// вывод значения nds3 в поле text4, используя метод setText и ограничение количества цифр после запятой методом format
+                    result.setText("");										// вывод текста "" в поле  result, используя метод setText
+                    log11.setVisible(false);
+                    log1.setVisible(false);
+                    log2.setVisible(false);
+                    log3.setVisible(false);
+                    log4.setVisible(false);
+                    log5.setVisible(false);
+                    text1.setVisible(false);
+                    comboBox.setVisible(false);
+                    comboBox1.setVisible(false);
+                    comboBox2.setVisible(false);
+                    comboBox3.setVisible(false);
+                    comboBox4.setVisible(false);
+                    Button1.setVisible(false);
+                    rubl1.setVisible(false);
+                    Button2.setVisible(true);
+                    log6.setVisible(true);
+                    log7.setVisible(true);
+                    log8.setVisible(true);
+                    text2.setVisible(true);
+                    text3.setVisible(true);
+                    text4.setVisible(true);
+                    rubl2.setVisible(true);
+                    rubl3.setVisible(true);
+                    rubl4.setVisible(true);
+                    Button2.setEnabled(true);		// перевод кнопки Button4 в доступное состояние (для нажатия) методом setEnabled
+                    comboBox1.setEnabled(false);		// перевод кнопки  comboBox1 в не доступное состояние (для нажатия) методом setEnabled
+                    comboBox2.setEnabled(false);
+                    comboBox3.setEnabled(false);
+                    comboBox4.setEnabled(false);
+                    comboBox.setEnabled(false);
+                    text1.setEnabled(false);
+                 }			// конец выполнения действий оператора try
+             catch ( NumberFormatException error ) {				// перехват исключения оператором catch
+                    result.setText("Проверьте введённые данные"); 		// вывод текста "Проверьте введённые данные" в поле  result, через метод setText
+                    result.setForeground(Color.RED);		// установка цвета текста Jlabel result
+              }			// конец выполнения действий при перехвате исключения оператором catch
+             }			// конец метода actionPerformed    
+         };				//конец работы слушателя bnds2       
+        final ActionListener snds1 = new ActionListener() {			// объявление слушателя snds1 (обработку события нажатия на кнопку)
+            @Override		// добавление аннотации Override
+             public void actionPerformed(ActionEvent calc) {		// объявление метода actionPerformed	
+                 try {		// объявление оператора try (попытка выполнить действия)
+                    double cost4 = Double.parseDouble(text1.getText());		// определение типа(Double) переменной(cost4) методом parseDouble,присваиваение переменной cost4 введенного значения из text1
+                    double nds4 = cost4-cost4/1.1;		// определение типа переменной(nds4), присваиваение nds4 значение выражения
+                    double summas4 = cost4;		// определение типа переменной(summas4), присваиваение summas4 значение выражения
+                    double summabez4 = cost4/1.1; 		// определение типа переменной(summabez4), присваиваение summabez4 значение выражения
+                    NumberFormat na = NumberFormat.getInstance();		// присвоение класса NumberFormat переменной na методом getInstance
+                    na.setMaximumFractionDigits(2); 		// ограничение количества цифр после запятой до 2-ух
+                    text2.setText(""+na.format(summas4));		// вывод значения summas4 в поле text2, используя метод setText и ограничение количества цифр после запятой методом format
+                    text3.setText(""+na.format(summabez4));		// вывод значения summabez4 в поле text3, используя метод setText и ограничение количества цифр после запятой методом format
+                    text4.setText(""+na.format(nds4));		// вывод значения nds4 в поле text4, используя метод setText и ограничение количества цифр после запятой методом format
+                    result.setText("");		// вывод текста "" в поле  result, используя метод setText
+                    log11.setVisible(false);
+                    log1.setVisible(false);
+                    log2.setVisible(false);
+                    log3.setVisible(false);
+                    log4.setVisible(false);
+                    log5.setVisible(false);
+                    text1.setVisible(false);
+                    comboBox.setVisible(false);
+                    comboBox1.setVisible(false);
+                    comboBox2.setVisible(false);
+                    comboBox3.setVisible(false);
+                    comboBox4.setVisible(false);
+                    Button1.setVisible(false);
+                    rubl1.setVisible(false);
+                    Button2.setVisible(true);
+                    log6.setVisible(true);
+                    log7.setVisible(true);
+                    log8.setVisible(true);
+                    text2.setVisible(true);
+                    text3.setVisible(true);
+                    text4.setVisible(true);
+                    rubl2.setVisible(true);
+                    rubl3.setVisible(true);
+                    rubl4.setVisible(true);
+                    Button2.setEnabled(true);		// перевод кнопки Button4 в доступное состояние (для нажатия) методом setEnabled
+                    comboBox1.setEnabled(false);		// перевод кнопки comboBox1 в не доступное состояние (для нажатия) методом setEnabled
+                    comboBox2.setEnabled(false);
+                    comboBox3.setEnabled(false);
+                    comboBox4.setEnabled(false);
+                    comboBox.setEnabled(false);
+                    text1.setEnabled(false);
+                 }			// конец выполнения действий оператора try
+             catch ( NumberFormatException error ) {				// перехват исключения оператором catch		
+                    result.setText("Проверьте введённые данные");		// вывод текста "Проверьте введённые данные" в поле  result, через метод setText
+                    result.setForeground(Color.RED);		// установка цвета текста Jlabel result методом setForeground
+              }			// конец выполнения действий при перехвате исключения оператором catch
+             }			// конец метода actionPerformed    
+         };				//конец работы слушателя snds1        
+         final ActionListener snds = new ActionListener() {		// объявление слушателя snds (обработку события нажатия на кнопку)
+              @Override		// добавляем аннотации Override
+               public void actionPerformed(ActionEvent calc) {		// объявление метода actionPerformed
+                   try {		// объявление оператора try (попытка выполнить действия)
+                      double cost = Double.parseDouble(text1.getText());		// определение типа(Double) переменной(cost) методом parseDouble, присваиваение переменной cost введенного значения из text1
+                      double nds = cost-cost/1.18;		// определение типа переменной(nds), присваиваение nds значения выражения
+                      double summas = cost;			// определение типа переменной(summas), присваиваение (summas значения выражения		
+                      double summabez = cost/1.18; 			// определение типа переменной(summabez), присваиваение summabez значения выражения
+                      NumberFormat na = NumberFormat.getInstance();		// присвоение класса NumberFormat переменной na методом getInstance
+                      na.setMaximumFractionDigits(2);  		// ограничение количества цифр после запятой до 2-ух
+                      text2.setText(""+na.format(summas));		// вывод значения summas в поле text2, используя метод setText и ограничение количества цифр после запятой методом format
+                      text3.setText(""+na.format(summabez));		// вывод значения summabez в поле text2, используя метод setText и ограничение количества цифр после запятой методом format
+                      text4.setText(""+na.format(nds));		// вывод значения nds в поле text2, используя метод setText и ограничение количества цифр после запятой методом format
+                      result.setText("");		// вывод текстf "" в поле  result, используя метод setText
+                      log11.setVisible(false);
+                      log1.setVisible(false);
+                      log2.setVisible(false);
+                      log3.setVisible(false);
+                      log4.setVisible(false);
+                      log5.setVisible(false);
+                      text1.setVisible(false);
+                      comboBox.setVisible(false);
+                      comboBox1.setVisible(false);
+                      comboBox2.setVisible(false);
+                      comboBox3.setVisible(false);
+                      comboBox4.setVisible(false);
+                      Button1.setVisible(false);
+                      rubl1.setVisible(false);
+                      Button2.setVisible(true);
+                      log6.setVisible(true);
+                      log7.setVisible(true);
+                      log8.setVisible(true);
+                      text2.setVisible(true);
+                      text3.setVisible(true);
+                      text4.setVisible(true);
+                      rubl2.setVisible(true);
+                      rubl3.setVisible(true);
+                      rubl4.setVisible(true);
+                      Button2.setEnabled(true);		//перевод кнопки Button4 в доступное состояние(для нажатия) методом setEnabled
+                      comboBox1.setEnabled(false);		// перевод кнопки comboBox1 в не доступное состояние (для нажатия) методом setEnabled
+                      comboBox2.setEnabled(false);
+                      comboBox3.setEnabled(false);
+                      comboBox4.setEnabled(false);
+                      comboBox.setEnabled(false);
+                      text1.setEnabled(false);
+                   }			// конец выполнения действий оператора try
